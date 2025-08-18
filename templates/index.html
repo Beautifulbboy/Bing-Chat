@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bing Chat</title>
+    <link id="favicon" rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Bing Chat</h2>
+        <div class="field">
+          <label>昵称</label>
+          <input id="username" placeholder="例如：Bing">
+        </div>
+        <div class="field">
+          <label>房间</label>
+          <input id="room" value="public">
+        </div>
+        <button id="connectBtn">连接</button>
+        <hr>
+        <h3>在线成员</h3>
+        <ul id="memberList"></ul>
+        <div id="status"></div>
+        <div class="tips">
+          <p>同一局域网内的其他设备在浏览器访问：<br><code>http://你的IP:5000</code></p>
+        </div>
+      </aside>
+
+      <main class="chat">
+        <div id="messages" class="messages"></div>
+        <div id="typing" class="typing"></div>
+        <div class="inputBar">
+          <input id="msgInput" placeholder="输入消息，回车发送" disabled>
+          <button id="sendBtn" disabled>发送</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="/static/client.js"></script>
+  </body>
+</html>
+
+
+<!-- <!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LAN Chat</title>
+    <link rel="stylesheet" href="/static/style.css"> -->
+
+    <!-- Socket.IO 客户端 -->
+
+    <!-- <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>LAN Chat</h2>
+        <div class="field">
+          <label>昵称</label>
+          <input id="username" placeholder="例如：Bing">
+        </div>
+        <div class="field">
+          <label>房间</label>
+          <input id="room" value="public">
+        </div>
+        <button id="connectBtn">连接</button>
+        <hr>
+        <h3>在线成员</h3>
+        <ul id="memberList"></ul>
+        <div id="status"></div>
+        <div class="tips">
+          <p>同一局域网内的其他设备在浏览器访问：<br><code>http://你的IP:5000</code></p>
+        </div>
+      </aside>
+
+      <main class="chat">
+        <div id="messages" class="messages"></div>
+        <div id="typing" class="typing"></div>
+        <div class="inputBar">
+          <input id="msgInput" placeholder="输入消息，回车发送" disabled>
+          <button id="sendBtn" disabled>发送</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="/static/client.js"></script>
+  </body>
+</html> -->

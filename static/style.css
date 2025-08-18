@@ -1,0 +1,39 @@
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+.container{display:flex;min-height:100vh}
+.sidebar{width:280px;background:#0f172a;color:#e2e8f0;padding:16px}
+.sidebar h2{margin-top:0}
+.field{display:flex;flex-direction:column;margin-bottom:8px}
+.field input{padding:8px;border-radius:8px;border:1px solid #334155;background:#111827;color:#e5e7eb}
+button{padding:10px 14px;border:0;border-radius:10px;background:#22c55e;color:#062;cursor:pointer}
+button:disabled{opacity:.6;cursor:not-allowed}
+hr{border:0;border-top:1px solid #334155;margin:12px 0}
+#memberList{list-style:none;padding-left:0;margin:0}
+#memberList li{padding:4px 0;border-bottom:1px dotted #334155}
+.tips{font-size:12px;color:#94a3b8;margin-top:12px}
+.chat{flex:1;display:flex;flex-direction:column;background:#f8fafc}
+.messages{flex:1;overflow:auto;padding:16px}
+.message{padding:8px 10px;margin:6px 0;border-radius:12px;max-width:70%}
+.message.self{background:#dcfce7;align-self:flex-end}
+.message.other{background:#e2e8f0;align-self:flex-start}
+.message .meta{font-size:12px;color:#64748b;margin-bottom:2px}
+.inputBar{display:flex;gap:8px;padding:12px;border-top:1px solid #e5e7eb;background:#fff}
+.inputBar input{flex:1;padding:10px;border-radius:10px;border:1px solid #cbd5e1}
+.typing{height:20px;padding:0 16px;color:#64748b;font-size:12px}
+.system{color:#475569;font-style:italic}
+
+/* 新增：拖放时的视觉提示 */
+.chat.dragover{border:2px dashed #22c55e}
+
+.messages{flex:1;overflow:auto;padding:16px}
+.message{padding:8px 10px;margin:6px 0;border-radius:12px;max-width:70%;word-wrap:break-word} /* 增加 word-wrap */
+.message.self{background:#dcfce7;align-self:flex-end}
+.message.other{background:#e2e8f0;align-self:flex-start}
+.message .meta{font-size:12px;color:#64748b;margin-bottom:2px}
+
+/* 新增：图片消息样式 */
+.message img{max-width:100%;border-radius:8px;display:block}
+
+.inputBar{display:flex;gap:8px;padding:12px;border-top:1px solid #e5e7eb;background:#fff}
+.inputBar input{flex:1;padding:10px;border-radius:10px;border:1px solid #cbd5e1}
+.typing{height:20px;padding:0 16px;color:#64748b;font-size:12px}
+.system{color:#475569;font-style:italic}
