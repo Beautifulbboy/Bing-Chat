@@ -125,15 +125,30 @@
       setConnected(false);
       return;
     }
-    // 请求通知权限
-    if ("Notification" in window && Notification.permission === "default") {
+    
+    // --- DIAGNOSTICS START ---
+    console.log("Attempting to connect and check notification permissions...");
+    if (!("Notification" in window)) {
+      console.error("This browser does not support desktop notifications.");
+    } else {
+      const currentPermission = Notification.permission;
+      console.log('Current notification permission state:', currentPermission);
+      
+      if (currentPermission === "default") {
+        console.log("Permission is 'default', requesting from user...");
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
-                console.log("桌面通知权限已获取！");
+                console.log("Permission granted!");
+                new Notification("LAN Chat", { body: "Notifications are now enabled!", icon: '/static/favicon.ico' });
             } else {
-                console.log("用户拒绝了桌面通知。");
+                console.warn("Permission denied by user.");
             }
         });
+      } else if (currentPermission === "denied") {
+          console.warn("Permission was previously denied. Please enable it in browser settings.");
+      } else if (currentPermission === "granted") {
+          console.log("Permission has already been granted.");
+      }
     }
 
     const username = usernameInput.value.trim() || "Guest";
